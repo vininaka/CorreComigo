@@ -101,7 +101,7 @@ export default class SignUp extends Component {
       this.setState({ image: result.uri });
     }
   };
-
+  
   CheckTextInput = () => {
     if (this.state.fullName != '') 
     {
@@ -150,7 +150,7 @@ export default class SignUp extends Component {
       <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/message/ultraviolet/50/3498db'}}/>
           <TextInput style={styles.inputs}
-              placeholder="Email"
+              placeholder="Email*"
               textContentType = "emailAddress"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
@@ -160,7 +160,7 @@ export default class SignUp extends Component {
         <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db'}}/>
           <TextInput style={styles.inputs}
-              placeholder="Senha"
+              placeholder="Senha*"
               textContentType = 'password'
               keyboardType = 'default'
               secureTextEntry={true}
@@ -184,14 +184,14 @@ export default class SignUp extends Component {
             />
           </TouchableWithoutFeedback>
           <Text style = {{marginTop:10}}>
-            Escolha a sua foto de Perfil
+            Escolha a sua foto de Perfil (opcional)
           </Text>
         </View>
 
         <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/male-user/ultraviolet/50/3498db'}}/>
           <TextInput style={styles.inputs}
-              placeholder="Nome"
+              placeholder="Nome*"
               keyboardType='name-phone-pad'
               underlineColorAndroid='transparent'
               textContentType = 'name'
@@ -203,10 +203,10 @@ export default class SignUp extends Component {
             style={{width: 200}}
             date = {this.state.birthDate}
             mode="date"
-            placeholder="Data de Nascimento"
+            placeholder="Data de Nascimento*"
             format="DD-MM-YYYY"
             minDate="01-01-1900"
-            maxDate="01-01-2100"
+            maxDate = "22/05/2019"
             confirmBtnText="Confirm"
             cancelBtnText="Cancel"
             customStyles={{
@@ -227,7 +227,7 @@ export default class SignUp extends Component {
       <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/ultraviolet/2x/building.png'}}/>
           <TextInput style={styles.inputs}
-              placeholder="Cidade"
+              placeholder="Cidade*"
               keyboardType='default'
               underlineColorAndroid='transparent'
               textContentType = 'addressCity'
@@ -237,7 +237,7 @@ export default class SignUp extends Component {
         <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://img.icons8.com/ultraviolet/2x/new-york.png'}}/>
           <TextInput style={styles.inputs}
-              placeholder="Estado"
+              placeholder="Estado*"
               keyboardType='default'
               underlineColorAndroid='transparent'
               textContentType = 'addressState'
@@ -247,7 +247,7 @@ export default class SignUp extends Component {
         <View style = {{alignItems:"center",flexDirection:"row"}}>
           
           <Text style = {{fontSize:15,marginTop:20,marginRight:100,marginLeft:80}}>
-            Gênero
+            Gênero *
           </Text>
 
           <View style = {{marginTop:20}}>
@@ -269,7 +269,7 @@ export default class SignUp extends Component {
         </View>
 
         <Card
-          title='Modalidades'
+          title='Modalidades*'
         >
         <View style = {{alignItems:"center",flexDirection:"row"}}>
           <RadioButton
@@ -339,11 +339,18 @@ export default class SignUp extends Component {
                 
           </View>   
      
+          <Text style = {{fontSize:15,marginTop:20, textAlign:"center", justifyContent:"center"}}>
+            Opções marcadas com * são de preenchimento obrigatório
+          </Text>
 
         <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} 
         onPress={this.CheckTextInput}>
           <Text style={styles.signUpText}>Cadastrar</Text>
         </TouchableHighlight>
+
+          <Text style = {{fontSize:10,marginTop:20, marginBottom:100, textAlign:"center", justifyContent:"center"}}>
+            Corre Comigo! Development Team
+          </Text>
         
       </ScrollView>
 
@@ -392,7 +399,7 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   inputs:{
-      height:200,
+      height:400,
       marginLeft:16,
       marginRight: 16,
       borderBottomColor: '#FFFFFF',
@@ -420,6 +427,11 @@ const styles = StyleSheet.create({
   },
   signUpText: {
     color: 'white',
+  },
+  logoImage:{
+    width: 150, 
+    height: 150,
+    marginBottom:30
   }
 });
  
