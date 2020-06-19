@@ -1,4 +1,4 @@
-# Corre_Comigo
+# Corre Comigo
 ####
 Repositório criado para gerência do Projeto da Disciplina SSC0620 - Engenharia de Software.
 ####
